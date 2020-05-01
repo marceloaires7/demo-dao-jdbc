@@ -101,9 +101,7 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 		ResultSet rs = null;
 		try {
 			st = conn.prepareStatement(
-					"SELECT department.* "
-					+ "FROM department "
-					+ "WHERE Id = ?");
+					"SELECT * FROM department WHERE Id = ?");
 			
 			st.setInt(1, id);
 			
@@ -136,9 +134,7 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 		ResultSet rs = null;
 		try {
 			st = conn.prepareStatement(
-					"SELECT department.* "
-					+ "FROM department "
-					+ "ORDER BY Name");
+					"SELECT * FROM department ORDER BY Name");
 			
 			rs = st.executeQuery();
 			
